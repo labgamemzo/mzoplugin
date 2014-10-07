@@ -24,7 +24,7 @@ function GetPluginSettings()
 					//	| pf_effects			// allow WebGL shader effects to be added
 					//  | pf_predraw			// set for any plugin which draws and is not a sprite (i.e. does not simply draw
 												// a single non-tiling image the size of the object) - required for effects to work properly
-        "dependency":   "classe.js"
+        "dependency":   "ConectaMundoGameCoreActs.js;ConectaMundoGameCoreCnds.js;ConectaMundoGameCoreExps.js"
 	};
 };
 
@@ -55,9 +55,8 @@ function GetPluginSettings()
 //				description,		// appears in event wizard dialog when selected
 //				script_name);		// corresponding runtime function name
 				
-// example				
+			
 AddNumberParam("Number", "Enter a number to test if positive.");
-AddStringParam("Nome", "Nome do sujeito");	
 AddCondition(0, cf_none, "Is number positive", "My category", "{0} is positive", "Description for my condition!", "MyCondition");
 
 
@@ -73,10 +72,10 @@ AddCondition(0, cf_none, "Is number positive", "My category", "{0} is positive",
 //			 description,		// appears in event wizard dialog when selected
 //			 script_name);		// corresponding runtime function name
 
-// example
-AddStringParam("Message", "Enter a string to alert.");
-AddAction(0, af_none, "Alert", "My category", "Alert {0}", "Description for my action!", "MyAction");
 
+
+
+// Login
 AddStringParam("Usuário", "nome de usuário");
 AddStringParam("Senha", "senha de acesso");
 AddAction(1, af_none, "Login", "MZO", "vamos logar {0}, com senha {1}.", "Login!", "Login");
@@ -92,7 +91,7 @@ AddAction(1, af_none, "Login", "MZO", "vamos logar {0}, com senha {1}.", "Login!
 //				 exp_name,		// the expression name after the dot, e.g. "foo" for "myobject.foo" - also the runtime function name
 //				 description);	// description in expressions panel
 
-// example
+
 AddExpression(0, ef_return_number, "Leet expression", "My category", "MyExpression", "Return the number 1337.");
 
 ////////////////////////////////////////
