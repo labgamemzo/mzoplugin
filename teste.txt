@@ -1,0 +1,9 @@
+common.js
+ConectaMundoGameCoreActs.js
+ConectaMundoGameCoreCnds.js
+ConectaMundoGameCoreExps.js
+edittime.js
+PluginIcon.ico
+README.md
+runtime.js
+teste.txt
