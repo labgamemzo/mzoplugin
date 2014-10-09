@@ -135,20 +135,52 @@ cr.plugins_.ConectaMundoGameCore = function(runtime)
 
 	//////////////////////////////////////
 	// Conditions
+	function Cnds() {};
+
+	// the example condition
+	Cnds.prototype.MyCondition = function (myparam)
+	{
+		// return true if number is positive
+		return myparam >= 0;
+	};
 	
+	Cnds.prototype.OnLoginSuccess = function(){
+        return true;
+    };
 	
-	pluginProto.cnds = new ConectaMundoGameCoreCnds();
+	pluginProto.cnds = new Cnds();
 	
 	//////////////////////////////////////
 	// Actions
-	    
+	function Acts() {};
+
+	// Login
+	Acts.prototype.Login = function (u, p)
+	{
+		// alert the message
+		alert(u + " " + p);
+        this.runtime.trigger(cr.plugins_.ConectaMundoGameCore.prototype.cnds.OnLoginSuccess, this);
+	};
 	
-	pluginProto.acts = new ConectaMundoGameCoreActs();
+	// ... other actions here ...
+	
+	pluginProto.acts = new Acts();
 	
 	//////////////////////////////////////
 	// Expressions
+	function Exps() {};
 	
+	// the example expression
+	Exps.prototype.MyExpression = function (ret)	// 'ret' must always be the first parameter - always return the expression's result through it!
+	{
+		ret.set_int(1337);				// return our value
+		// ret.set_float(0.5);			// for returning floats
+		// ret.set_string("Hello");		// for ef_return_string
+		// ret.set_any("woo");			// for ef_return_any, accepts either a number or string
+	};
 	
-	pluginProto.exps = new ConectaMundoGameCoreExps();
+	// ... other expressions here ...
+	
+	pluginProto.exps = new Exps();
 
 }());

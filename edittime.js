@@ -10,7 +10,7 @@ function GetPluginSettings()
 		"category":		"MZO",				// Prefer to re-use existing categories, but you can set anything here
 		"type":			"object",				// either "world" (appears in layout and is drawn), else "object"
 		"rotatable":	true,					// only used when "type" is "world".  Enables an angle property on the object.
-		"flags":		pf_singleglobal,						// uncomment lines to enable flags...
+		"flags":		pf_singleglobal						// uncomment lines to enable flags...
 					//	| pf_singleglobal		// exists project-wide, e.g. mouse, keyboard.  "type" must be "object".
 					//	| pf_texture			// object has a single texture (e.g. tiled background)
 					//	| pf_position_aces		// compare/set/get x, y...
@@ -24,7 +24,7 @@ function GetPluginSettings()
 					//	| pf_effects			// allow WebGL shader effects to be added
 					//  | pf_predraw			// set for any plugin which draws and is not a sprite (i.e. does not simply draw
 												// a single non-tiling image the size of the object) - required for effects to work properly
-        "dependency":   "ConectaMundoGameCoreModel.js;ConectaMundoGameCoreActs.js;ConectaMundoGameCoreCnds.js;ConectaMundoGameCoreExps.js"
+        
 	};
 };
 
@@ -58,6 +58,10 @@ function GetPluginSettings()
 			
 AddNumberParam("Number", "Enter a number to test if positive.");
 AddCondition(0, cf_none, "Is number positive", "My category", "{0} is positive", "Description for my condition!", "MyCondition");
+
+// Login success
+AddCondition(1, cf_trigger, "Login success", "MZO", "Login success", "Login sucess!", "OnLoginSuccess");
+
 
 
 
