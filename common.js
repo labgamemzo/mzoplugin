@@ -10,8 +10,8 @@ var ConectaMundoGameCoreModel = {
 /////////////
 // Urls da API
 var ConectaMundoGameCoreApi = {
-    login: "http://172.18.200.169/ws_labgame/login",
-    game_list: "http://172.18.200.169/ws_labgame/game_list"
+    login: "http://gidenilson.com.br/ws_labgame/login",
+    game_list: "http://gidenilson.com.br/ws_labgame/game_list"
 };
 
 ///////////////

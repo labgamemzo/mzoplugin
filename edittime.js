@@ -135,7 +135,8 @@ ACESDone();
 // new cr.Property(ept_link,		name,	link_text,		description, "firstonly")		// has no associated value; simply calls "OnPropertyChanged" on click
 
 var property_list = [
-	new cr.Property(ept_integer, 	"My property",		77,		"An example property.")
+	new cr.Property(ept_text, 	"login_url",		"",		"webservice"),
+    new cr.Property(ept_text, 	"list_game_url",		"",		"webservice")
 	];
 	
 // Called by IDE when a new object type is to be created
