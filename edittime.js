@@ -69,7 +69,7 @@ AddCondition(2, cf_trigger, "Login failed", "MZO", "Login failed", "Login failed
 AddCondition(3, cf_trigger, "Game list success", "MZO", "Game list success", "Game list success", "OnGameListSuccess");
 
 // Game list failed
-AddCondition(3, cf_trigger, "Game list failed", "MZO", "Game list failed", "Game list failed", "OnGameListFailed");
+AddCondition(4, cf_trigger, "Game list failed", "MZO", "Game list failed", "Game list failed", "OnGameListFailed");
 
 
 
