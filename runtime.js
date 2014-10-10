@@ -149,17 +149,20 @@ cr.plugins_.ConectaMundoGameCore = function (runtime) {
         $.ajax({
             type: "POST",
             url: ConectaMundoGameCoreApi.login,
-            data: {username: u, password : p},
+            data: {
+                username: u,
+                password: p
+            },
             success: function (res) {
-                if(ConectaMundoGameCoreUtils.CheckSuccess(res)) {
+                if (ConectaMundoGameCoreUtils.CheckSuccess(res)) {
                     ConectaMundoGameCoreModel.user = res.user;
                     self.runtime.trigger(cr.plugins_.ConectaMundoGameCore.prototype.cnds.OnLoginSuccess, self);
-                }else{
+                } else {
                     self.runtime.trigger(cr.plugins_.ConectaMundoGameCore.prototype.cnds.OnLoginFailed, self);
                 }
             }
         });
-        
+
 
     };
 
@@ -179,8 +182,15 @@ cr.plugins_.ConectaMundoGameCore = function (runtime) {
         // ret.set_string("Hello");		// for ef_return_string
         // ret.set_any("woo");			// for ef_return_any, accepts either a number or string
     };
+    // Retorn um dado do usuário logado
+    Exps.prototype.GetUserData = function (ret, c) {
+        if (ConectaMundoGameCoreModel.user[c] !== undefined) {
+            ret.set_string(ConectaMundoGameCoreModel.user[c]);
+        }else{
+            ret.set_string("");
+        }
+    };
 
-    // ... other expressions here ...
 
     pluginProto.exps = new Exps();
 

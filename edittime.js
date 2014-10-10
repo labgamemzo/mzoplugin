@@ -101,6 +101,12 @@ AddAction(1, af_none, "Login", "MZO", "vamos logar {0}, com senha {1}.", "Login!
 
 AddExpression(0, ef_return_number, "Leet expression", "My category", "MyExpression", "Return the number 1337.");
 
+// Retorna um dado do usuário logado
+AddStringParam("campo", "campo de dado" );
+AddExpression(1, ef_return_string, "Nome do usuário", "MZO", "GetUserData", "Retorna o nome real do usuário.");
+
+
+
 ////////////////////////////////////////
 ACESDone();
 
