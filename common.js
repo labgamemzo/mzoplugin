@@ -1,7 +1,8 @@
 ///////////////
 // Model
 var ConectaMundoGameCoreModel = {
-    user: undefined
+    user: undefined,
+    games: undefined
 };
 
 
@@ -9,7 +10,8 @@ var ConectaMundoGameCoreModel = {
 /////////////
 // Urls da API
 var ConectaMundoGameCoreApi = {
-    login: "http://localhost/conectamundo/login"
+    login: "http://localhost/conectamundo/login",
+    game_list: "http://localhost/conectamundo/game_list"
 };
 
 ///////////////

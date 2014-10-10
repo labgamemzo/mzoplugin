@@ -65,6 +65,12 @@ AddCondition(1, cf_trigger, "Login success", "MZO", "Login success", "Login suce
 // Login failed
 AddCondition(2, cf_trigger, "Login failed", "MZO", "Login failed", "Login failed!", "OnLoginFailed");
 
+// Game list success
+AddCondition(3, cf_trigger, "Game list success", "MZO", "Game list success", "Game list success", "OnGameListSuccess");
+
+// Game list failed
+AddCondition(3, cf_trigger, "Game list failed", "MZO", "Game list failed", "Game list failed", "OnGameListFailed");
+
 
 
 
@@ -87,6 +93,12 @@ AddStringParam("Usuário", "nome de usuário");
 AddStringParam("Senha", "senha de acesso");
 AddAction(1, af_none, "Login", "MZO", "vamos logar {0}, com senha {1}.", "Login!", "Login");
 
+// Game List
+AddStringParam("Sid", "sid");
+AddStringParam("Userid", "userid");
+AddStringParam("Themecode", "themecode");
+AddAction(2, af_none, "Game List", "MZO", "captura a lista de jogos", "Game List", "GetGameList");
+
 ////////////////////////////////////////
 // Expressions
 
@@ -105,6 +117,8 @@ AddExpression(0, ef_return_number, "Leet expression", "My category", "MyExpressi
 AddStringParam("campo", "campo de dado" );
 AddExpression(1, ef_return_string, "Nome do usuário", "MZO", "GetUserData", "Retorna o nome real do usuário.");
 
+// Retorna a lista de jogos (GameList) para o usuário
+AddExpression(2, ef_return_string, "Lista de jogos", "MZO", "GetGameList", "Retorna  lista de jogos do usuário.");
 
 
 ////////////////////////////////////////

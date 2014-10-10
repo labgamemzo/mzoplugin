@@ -137,6 +137,16 @@ cr.plugins_.ConectaMundoGameCore = function (runtime) {
         return true;
     };
 
+    // OnGameListSuccess
+    Cnds.prototype.OnGameListSuccess = function () {
+        return true;
+    };
+
+    // OnGameListFailed    
+    Cnds.prototype.OnGameListFailed = function () {
+        return true;
+    };
+
     pluginProto.cnds = new Cnds();
 
     //////////////////////////////////////
@@ -166,6 +176,30 @@ cr.plugins_.ConectaMundoGameCore = function (runtime) {
 
     };
 
+    // GetGameList
+    Acts.prototype.GetGameList = function (sid, userid, themecode) {
+        var self = this;
+        $.ajax({
+            type: "POST",
+            url: ConectaMundoGameCoreApi.game_list,
+            data: {
+                sid: sid,
+                userid: userid,
+                themecode: themecode
+            },
+            success: function (res) {
+                if (ConectaMundoGameCoreUtils.CheckSuccess(res)) {
+                    ConectaMundoGameCoreModel.games = res.games;
+                    self.runtime.trigger(cr.plugins_.ConectaMundoGameCore.prototype.cnds.OnGameListSuccess, self);
+                } else {
+                    self.runtime.trigger(cr.plugins_.ConectaMundoGameCore.prototype.cnds.OnGameListFailed, self);
+                }
+            }
+        });
+
+
+    };
+
     // ... other actions here ...
 
     pluginProto.acts = new Acts();
@@ -186,9 +220,13 @@ cr.plugins_.ConectaMundoGameCore = function (runtime) {
     Exps.prototype.GetUserData = function (ret, c) {
         if (ConectaMundoGameCoreModel.user[c] !== undefined) {
             ret.set_string(ConectaMundoGameCoreModel.user[c]);
-        }else{
+        } else {
             ret.set_string("");
         }
+    };
+    // Retorn a lista de jogos do usuário logado
+    Exps.prototype.GetGameList = function (ret) {
+        ret.set_string(JSON.stringify(ConectaMundoGameCoreModel.games));
     };
 
 
