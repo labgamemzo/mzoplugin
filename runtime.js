@@ -188,10 +188,13 @@ cr.plugins_.ConectaMundoGameCore = function (runtime) {
                 themecode: themecode
             },
             success: function (res) {
+			alert(1);
                 if (ConectaMundoGameCoreUtils.CheckSuccess(res)) {
                     ConectaMundoGameCoreModel.games = res.games;
+					alert(2);
                     self.runtime.trigger(cr.plugins_.ConectaMundoGameCore.prototype.cnds.OnGameListSuccess, self);
                 } else {
+				alert(3);
                     self.runtime.trigger(cr.plugins_.ConectaMundoGameCore.prototype.cnds.OnGameListFailed, self);
                 }
             }
