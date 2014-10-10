@@ -62,6 +62,9 @@ AddCondition(0, cf_none, "Is number positive", "My category", "{0} is positive",
 // Login success
 AddCondition(1, cf_trigger, "Login success", "MZO", "Login success", "Login sucess!", "OnLoginSuccess");
 
+// Login failed
+AddCondition(2, cf_trigger, "Login failed", "MZO", "Login failed", "Login failed!", "OnLoginFailed");
+
 
 
 
